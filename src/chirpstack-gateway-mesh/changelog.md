@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.1.2
+
+### Improvements
+
+- Improve debug logging.
+  ([#99](https://github.com/chirpstack/chirpstack-gateway-mesh/pull/99))
+- Remove deprecated `GenericArray` use.
+  ([#100](https://github.com/chirpstack/chirpstack-gateway-mesh/pull/100))
+- Add `lorawan_only` filter option.
+- Update internal dependencies.
+
 ## v4.1.1
 
 ### Improvements
