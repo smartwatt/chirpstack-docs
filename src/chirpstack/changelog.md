@@ -1,6 +1,41 @@
 # Changelog
 
+## v4.16.2
+
+### Bugfixes
+
+#### SQLite migration fix
+
+This release fixes a critical issue in the SQLite migration, that causes
+deleting devices from the device table.
+([#825](https://github.com/chirpstack/chirpstack/issues/825)).
+
+Context: SQLite has limited support for `ALTER TABLE` queries, therefore it is
+often needed to re-create the table with the updated schema, copy over the data
+and remove the old table. In this specific migration, the `device_profile` table
+is re-created to drop the `NOT NULL` constraint on the `tenant_id` column to
+make it possible to store both "global" and tenant-owned device profiles. To
+avoid that this triggers the deletion of data with a foreign-key constraint to
+this table, the re-create, copy, delete and rename process was between:
+
+```sql
+pragma foreign_keys = 0;
+-- create, copy, delete, rename queries
+pragma foreign_keys = 1;
+```
+
+This works fine when executed outside the context of an SQLite transaction
+(which was tested), but fails when executed within a transaction (when executed
+through `diesel`), as per
+[SQLite documentation](https://www.sqlite.org/pragma.html#pragma_foreign_keys):
+_This pragma is a no-op within a transaction_.
+
+This is fixed by disabling the `foreign_keys` `PRAGMA` before `diesel` starts
+the transaction for executing migrations.
+
 ## v4.16.1
+
+**Note:** Do not use this version if you are using the SQLite build!
 
 ### Bugfixes
 
