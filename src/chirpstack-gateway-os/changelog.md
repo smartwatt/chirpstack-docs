@@ -1,5 +1,47 @@
 # Changelog
 
+## v4.10.1
+
+This fixes a critical issue in the ChirpStack SQLite build that was found in
+v4.16. Please see the ChirpStack changelog for more information.
+
+### Updates
+
+- Update ChirpStack to v4.16.2
+
+## v4.10.0
+
+### ChirpStack Device Repository
+
+**Note:** This only applies to images that have ChirpStack pre-installed.
+
+This release adds support for importing device profiles from
+[https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles).
+See also the ChirpStack changelog for v4.16.0. In case you have old
+device-profile templates, you can migrate these using the following command:
+
+```
+chirpstack -c /var/etc/chirpstack migrate-device-profile-templates
+```
+
+### OpenVPN support
+
+This release adds the `kmod-tun` package for all targets, which is required when
+installing OpenVPN through the package-repository.
+([#143](https://github.com/chirpstack/chirpstack-gateway-os/issues/143))
+
+### Updates
+
+- Update ChirpStack Concentratord to v4.6.0
+- Update ChirpStack MQTT Forwarder to v4.5.1
+- Update ChirpStack UDP Forwarder to v4.3.0
+- Update ChirpStack Gateway Mesh to v4.1.2
+- Update ChirpStack to v4.16.1
+
+### Improvements
+
+- Update to OpenWrt v24.10.5.
+
 ## v4.9.0
 
 ### Features
