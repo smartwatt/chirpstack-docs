@@ -13,3 +13,6 @@ For gateway specific packages, please refer to the
 | [chirpstack-concentratord-sx1301_%CONCENTRATORD_VERSION_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/chirpstack-concentratord-sx1301_%CONCENTRATORD_VERSION_linux_arm64.tar.gz)     | SX1301 | .tar.gz | Linux | arm64 |
 | [chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION_linux_arm64.tar.gz)     | SX1302 | .tar.gz | Linux | arm64 |
 | [chirpstack-concentratord-2g4_%CONCENTRATORD_VERSION_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/chirpstack-concentratord-2g4_%CONCENTRATORD_VERSION_linux_arm64.tar.gz)           | 2G4    | .tar.gz | Linux | arm64 |
+
+Previous versions are available at:
+[https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/).

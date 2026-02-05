@@ -23,6 +23,9 @@
 | [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_armv7.rpm)               | .rpm    | SQLite     | Linux | armv7 |
 | [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_arm64.rpm)               | .rpm    | SQLite     | Linux | arm64 |
 
+Previous versions are available at:
+[https://artifacts.chirpstack.io/downloads/chirpstack/](https://artifacts.chirpstack.io/downloads/chirpstack/).
+
 ## Debian / Ubuntu repository
 
 ChirpStack provides pre-compiled binaries as Debian (`.deb`) packages. To

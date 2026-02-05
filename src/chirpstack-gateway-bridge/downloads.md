@@ -15,6 +15,9 @@
 | [chirpstack-gateway-bridge_%GATEWAY_BRIDGE_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_%GATEWAY_BRIDGE_VERSION_linux_armv7.rpm)       | .rpm    | Linux | armv7 |
 | [chirpstack-gateway-bridge_%GATEWAY_BRIDGE_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_%GATEWAY_BRIDGE_VERSION_linux_arm64.rpm)       | .rpm    | Linux | arm64 |
 
+Previous versions are available at:
+[https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/).
+
 ## Debian / Ubuntu repository
 
 ChirpStack provides pre-compiled binaries as Debian (`.deb`) packages. To
