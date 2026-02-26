@@ -45,19 +45,21 @@ chirpstack --config /etc/chirpstack reset-password --email <EMAIL> [OPTIONS]
 # Interactive password reset (prompts for password twice)
 chirpstack --config /etc/chirpstack reset-password -e admin@example.com
 
-# Password from file
-echo "SecurePassword123" > /tmp/pw.txt
+# Password from file (recommended for scripts)
+read -rs PW && printf '%s' "$PW" > /tmp/pw.txt && unset PW
+chmod 600 /tmp/pw.txt
 chirpstack --config /etc/chirpstack reset-password -e admin@example.com -p /tmp/pw.txt
+rm /tmp/pw.txt
 
-# Password from stdin (recommended for scripts)
-echo "SecurePassword123" | chirpstack --config /etc/chirpstack reset-password -e admin@example.com --stdin
+# Password from stdin (pipeline use, e.g. from a secrets manager)
+my-secrets-tool get admin-password | chirpstack --config /etc/chirpstack reset-password -e admin@example.com --stdin
 ```
 
 **Security notes:**
 
-- When using a file, ensure it has restrictive permissions (e.g., `chmod 600`)
-- Always delete password files after use
-- When using stdin, ensure the password is not logged in shell history
+- When using a file, set restrictive permissions (`chmod 600`) and delete it after use
+- Avoid embedding a plaintext password in a command (e.g. `echo "pass" | ...`): it appears in shell history and is visible via process inspection
+- For scripts, prefer the file method or pipe from a secrets manager — see the [Password handling](#password-handling) table below
 
 **Password requirements:**
 
@@ -144,8 +146,8 @@ security implications:
 For scripted deployments using password files:
 
 ```bash
-# Create password file with restrictive permissions
-echo "SecurePassword123" > /tmp/pw.txt
+# Read password without it appearing in shell history
+read -rs PW && printf '%s' "$PW" > /tmp/pw.txt && unset PW
 chmod 600 /tmp/pw.txt
 
 # Use in command
